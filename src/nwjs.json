@@ -1,0 +1,56 @@
+{
+  "name": "nwjs-react-boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "dist": "build --tasks win-x64 --mirror https://dl.nwjs.io/ ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meticoeus/nwjs-react-boilerplate.git"
+  },
+  "author": "Justin Bailey",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/meticoeus/nwjs-react-boilerplate/issues"
+  },
+  "homepage": "https://github.com/meticoeus/nwjs-react-boilerplate#readme",
+  "devDependencies": {
+    "nwjs-builder-phoenix": "^1.14.8"
+  },
+  "dependencies": {
+    "primereact": "^2.0.0-beta.3",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2"
+  },
+  "build": {
+    "nwVersion": "0.32.4",
+    "excludes": "node_modules/*",
+    "packed": true,
+    "targets": [
+      "zip",
+      "nsis7z"
+    ],
+    "outputPattern": "${NAME} ${VERSION} ${PLATFORM} ${ARCH}",
+    "win": {
+      "productName": "nwjs-react-boilerplate",
+      "companyName": "nwjs-builder-phoenix",
+      "copyright": "copyright",
+      "icon": "../img/favicon.ico"
+    },
+    "mac": {
+      "displayName": "COP Utils",
+      "copyright": "copyright",
+      "icon": "../img/favicon.ico",
+      "plistStrings": {
+        "CFBundleIdentifier": "io.github.meticoeus.nwjs-react-boilerplate.project.modified",
+        "CFBundleDocumentTypes": []
+      }
+    },
+    "nsis": {
+      "installDirectory": "C:\\Program Files\\nwjs-react-boilerplate",
+      "diffUpdaters": true
+    }
+  }
+}
